@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Error</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+          href="/css/bootstrap.min.css"/>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}" src="/js/bootstrap.min.js">
+    </script>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="http://www.thymeleaf.org">
+            <img width="200" src="../static/images/thymeleaf_logo_dark.png" th:src="@{images/thymeleaf_logo_dark.png}"
+                 alt="Thymeleaf Logo">
+        </a>
+        <ul class="navbar-nav justify-content-end">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/}" href="home.html"> Home </a>
+            </li>
+        </ul>
+    </nav>
+    <br/>
+    <div class="card text-white bg-danger mb-3">
+        <div class="card-header">Aww Snaps... Something went wrong</div>
+        <div class="card-body">
+
+            <h5 class="card-title" th:text="${errormessage}"> Dummy Error Message</h5>
+            <ul >
+                <li >Time :
+                    <span class="card-text" th:text="${timestamp}"> Dummy Error timestamp</span>
+
+                </li>
+                <li>Path :
+                    <span class="card-text" th:text="${path}">Dummy path </span>
+
+                </li>
+                <li >Error :
+                    <span class="card-text" th:text="${error}">Dummy Error</span>
+
+                </li>
+                <li >Status :
+                    <span class="card-text" th:text="${status}">Dummy Error status</span>
+
+                </li>
+                <li >Message :
+                    <span class="card-text" th:text="${message}">Dummy Error message</span>
+
+                </li>
+                <li >Exception :
+                    <span class="card-text" th:text="${exception}">Dummy Exception</span>
+
+                </li>
+                <li >Trace :
+                    <span class="card-text" th:text="${trace}">Dummy trace</span>
+
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+<div th:insert="fragments/common.html :: footer"></div>
+
+</body>
+</html>

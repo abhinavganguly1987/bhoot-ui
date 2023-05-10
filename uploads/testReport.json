@@ -1,0 +1,21 @@
+{
+  "results": [
+    {
+      "tests": [
+        {
+          "group": "ABS",
+          "userJourney": "ABS",
+          "test": "ABS04",
+          "release": "",
+          "userJourneyId": "",
+          "status": "Passed"
+        }
+      ],
+      "time": "2022-12-19T13:19:54.700",
+      "runner": "Regression",
+      "status": "Passed"
+    }
+  ],
+  "status": "Passed",
+  "pass": true
+}

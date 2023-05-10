@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title th:text="${title}">Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+          href="/css/bootstrap.min.css"/>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}" src="/js/bootstrap.min.js">
+    </script>
+</head>
+<body>
+<div class="container">
+    <nav th:insert="fragments/common.html :: navigator"></nav>
+
+    <div th:text="${errormessage}" th:if="${errormessage ne null}" class="alert alert-danger" role="alert"> dummy error
+    </div>
+    <div th:text="${successmessage}" th:if="${successmessage ne null}" class="alert alert-success" role="alert"> dummy
+        success
+    </div>
+    <br/>
+    <div class="card">
+        <div class="card-header">JSON to Java Class converter</div>
+        <div class="card-body">
+            <form th:action="@{/convertJson2Java}" method="post" enctype="multipart/form-data">
+                <div class="input-group mb-3">
+                    <input class="form-control form-control-lg" placeholder="JSON File that you want to convert"
+                           type="file" name="jsxToConvert" id="jsxToCovert" accept=".json"
+                           aria-label="JSON File that you want to convert" aria-describedby="basic-addon2"/>
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">.json</span>
+                    </div>
+                </div>
+                <label for="javaClassName">Java Class file name that you want</label>
+                <div class="input-group mb-3">
+                    <input class="form-control form-control-lg" type="text" name="javaClassName" id="javaClassName"/>
+                    <br/>
+                </div>
+                <br/>
+
+                <button type="submit" class="btn btn-primary">CONVERT JSON</button>
+
+            </form>
+        </div>
+    </div>
+
+    <div th:insert="fragments/common.html :: footer"></div>
+</div>
+
+</body>
+</html>

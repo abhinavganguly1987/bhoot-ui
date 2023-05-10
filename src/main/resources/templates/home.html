@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title th:text="${title}">Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+          href="/css/bootstrap.min.css"/>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}" src="/js/bootstrap.min.js">
+    </script>
+</head>
+<body>
+<div class="container">
+
+    <nav th:insert="fragments/common.html :: navigator"></nav>
+
+    <br/>
+
+    <div class="card">
+        <div class="card-header">Home</div>
+        <div class="card-body">
+            <h5 class="card-title" th:text="${title}"></h5>
+            <p>
+                It is <span
+                    th:text="${#calendars.format(#calendars.createNow(),'dd MMMM yyyy HH:mm Z')}">13 May 2011</span> now
+            </p>
+            <p class="card-text" th:text="${message}"></p>
+        </div>
+
+    </div>
+    <div th:insert="fragments/common.html :: footer"></div>
+</div>
+</body>
+</html>
