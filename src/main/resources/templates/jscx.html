@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -24,6 +24,8 @@
         <div class="card-header">JSON to Java Class converter</div>
         <div class="card-body">
             <form th:action="@{/convertJson2Java}" method="post" enctype="multipart/form-data">
+
+                <label for="jsxToCovert">JSON File that you want to convert</label>
                 <div class="input-group mb-3">
                     <input class="form-control form-control-lg" placeholder="JSON File that you want to convert"
                            type="file" name="jsxToConvert" id="jsxToCovert" accept=".json"

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -22,6 +22,7 @@
         <div class="card-header">JSON Validator</div>
         <div class="card-body">
             <form th:action="@{/validateJSON}" method="post" enctype="multipart/form-data">
+                <label for="jsxToValidate">JSON File that you want to validate</label>
                 <div class="input-group mb-3">
                     <input class="form-control form-control-lg" placeholder="JSON File that you want to validate"
                            type="file" name="jsxToValidate" id="jsxToValidate" accept=".json"
